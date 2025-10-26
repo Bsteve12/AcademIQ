@@ -25,4 +25,8 @@ public class CalificacionDetalle {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "calificacion_id", nullable = false)
     private Calificacion calificacion;
+
+    @Column(length = 255)
+    private String descripcion;
+
 }
