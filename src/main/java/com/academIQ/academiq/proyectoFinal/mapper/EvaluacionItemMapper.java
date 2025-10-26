@@ -12,20 +12,23 @@ public class EvaluacionItemMapper {
     public EvaluacionItem toEntity(EvaluacionItemRequestDTO dto, Asignatura asignatura) {
         return EvaluacionItem.builder()
                 .nombreItem(dto.getNombreItem())
+                .descripcion(dto.getDescripcion())
                 .porcentaje(dto.getPorcentaje())
                 .fechaRegistro(dto.getFechaRegistro())
                 .asignatura(asignatura)
                 .build();
     }
 
-    public EvaluacionItemResponseDTO toResponseDTO(EvaluacionItem item) {
+    public EvaluacionItemResponseDTO toResponseDTO(EvaluacionItem entity) {
         return EvaluacionItemResponseDTO.builder()
-                .id(item.getId())
-                .nombreItem(item.getNombreItem())
-                .porcentaje(item.getPorcentaje())
-                .fechaRegistro(item.getFechaRegistro())
-                .asignaturaId(item.getAsignatura().getId())
-                .asignaturaNombre(item.getAsignatura().getNombre())
+                .id(entity.getId())
+                .nombreItem(entity.getNombreItem())
+                .descripcion(entity.getDescripcion())
+                .porcentaje(entity.getPorcentaje())
+                .fechaRegistro(entity.getFechaRegistro())
+                .asignaturaNombre(
+                        entity.getAsignatura() != null ? entity.getAsignatura().getNombre() : "Sin asignatura"
+                )
                 .build();
     }
 }

@@ -111,7 +111,7 @@ public class DocenteServiceImplementation implements DocenteServiceInterface {
         docenteRepository.delete(docente);
     }
 
-    // 🔸 En Oracle:
+    //  En Oracle:
     // - La tabla intermedia docente_asignatura (relación N:M) debe existir físicamente con FK hacia docentes y asignaturas.
     // - Reglas de negocio avanzadas (por ejemplo: evitar asignar un docente a dos grupos con choque de horario) deben implementarse con procedimientos/triggers en Oracle o mediante vistas que permitan detectar conflictos.
     // - Vistas y reportes (docentes por sede, carga académica por docente, número de grupos por docente) se implementan en Oracle.
